@@ -58,7 +58,7 @@ int main()
         fitnessdata[count].steps = atoi(steps);
         count++;
     }
-    printf("number of records in file: %d\n",count);
+    printf("Number of records in file: %d\n",count);
     for(i=0;i<3;i++)
     {
         printf("%s/%s/%d\n", fitnessdata[i].date, fitnessdata[i].time, fitnessdata[i].steps);
