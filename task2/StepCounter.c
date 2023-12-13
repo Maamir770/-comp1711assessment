@@ -72,7 +72,7 @@ int main()
         printf("enter filename: \n");
         fgets(line,100,stdin);
         sscanf(line,"%s",filename);
-
+        while (getchar() != '\n');
         FILE *file = fopen(filename, "r");
         if (file == NULL)
             {
@@ -92,7 +92,7 @@ int main()
         
         case 'B':
         case'b':
-        printf("Total Records: %d\n", count);
+        printf("Total records: %d\n", count);
 
             break;
         
