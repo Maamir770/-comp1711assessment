@@ -86,7 +86,7 @@ int main()
 		    fitnessdata[count].steps = atoi(steps);
             count++;
         }
-        fclose(file);
+        
 
             break;
         
