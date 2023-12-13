@@ -17,10 +17,7 @@ int highest = 0;
 int mean;
 int truemean;
 int fcount = 0;
-char * startdate[20];
-char * enddate[20];
-char * starttime[8];
-char * endtime[8];
+char * temp[4];
 int streak=0;
 
 // This is your helper function. Do not change it in any way.
@@ -65,7 +62,8 @@ int main()
     "E: Find the mean step count of all the records in the file\n"
     "F: Find the longest continuous period where the step count is above 500 steps\n"
     "Q: Exit\n");
-    scanf("%c", option);
+    option = getchar();
+    while (getchar() != '\n');
 
     switch(option)
         {
@@ -164,10 +162,10 @@ int main()
                     {
                         streak = fcount;
 
-                        startdate = fitnessdata[start].date;
-                        starttime = fitnessdata[start].time;
-                        enddate = fitnessdata[end].date;
-                        endtime = fitnessdata[end].time;
+                        temp[1] = fitnessdata[start].date;
+                        temp[2] = fitnessdata[start].time;
+                        temp[3] = fitnessdata[end].date;
+                        temp[4] = fitnessdata[end].time;
                     }
 
                     fcount = 0;
@@ -175,13 +173,14 @@ int main()
                 }
             }
 
-            printf("Longest period start: %s %s\n", startdate,starttime);
-            printf("Longest period end: %s %s\n", enddate, endtime);
+            printf("Longest period start: %s %s\n", temp[1],temp[2]);
+            printf("Longest period end: %s %s\n", temp[3], temp[4]);
 
             break;
 
         case 'Q':
-            exit;
+        case 'q':
+            return 0;
             break;
 
         default:
