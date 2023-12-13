@@ -77,10 +77,10 @@ int main()
         if (file == NULL)
             {
             printf("Error opening file\n");
-            exit(1);
+            return 1;
             }
 
-        while(fgets(linebuffer,100,file)!= NULL)
+        while(fgets(linebuffer,100,file))
         {
 		    tokeniseRecord(line, ",", 	fitnessdata[count].date, fitnessdata[count].time, steps);
 		    fitnessdata[count].steps = atoi(steps);
@@ -136,13 +136,14 @@ int main()
 
         case 'E':
         case 'e':
+                mean = 0;
                 for (int k=0;k<count;k++)
                 {
                 mean += fitnessdata[k].steps;
                 }
 
             mean = mean / count;
-            printf("Mean step count: %d\n", truemean);
+            printf("Mean step count: %d\n", mean);
             break;
         case 'F':
         case 'f':
