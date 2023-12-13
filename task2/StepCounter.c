@@ -82,10 +82,8 @@ int main()
 
         while(fgets(linebuffer,100,file)!= NULL)
         {
-            tokeniseRecord(linebuffer,",",date,time,steps);
-            strcpy(fitnessdata[count].date, date);
-            strcpy(fitnessdata[count].time, time);
-            fitnessdata[count].steps = atoi(steps);
+		    tokeniseRecord(line, ",", 	fitnessdata[count].date, fitnessdata[count].time, steps);
+		    fitnessdata[count].steps = atoi(steps);
             count++;
         }
         fclose(file);
