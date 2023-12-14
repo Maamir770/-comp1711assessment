@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 // Define the struct for the fitness data
 typedef struct {
     char date[11];
@@ -30,27 +31,28 @@ int isValidDataFormat(const char *input) {
     int comma_count = 0;
     int length = strlen(input);
 
-    if (length < 20 || length > 22) 
+    if (length <20 || length > 23) 
     {
         return 1; 
+
     }
 
     for (int i = 0; i < length; i++) 
     {
-        if ((i == 11 || i == 17) && input[i] != ',') 
+        if ((i == 10 || i == 16) && input[i] != ',') 
         {
             return 1;
         }
-          if ((i == 5 || i == 8) && input[i] != '-') 
+          if ((i == 4 || i == 7) && input[i] != '-') 
         {
             return 1;
         }
-          if ((i == 14) && input[i] != ':') 
+          if ((i == 13) && input[i] != ':') 
         {
             return 1;
         }
 
-        if((i!=5 && i!=8 && i!=14 && i!=11 && i!=17) && !isdigit(input[i]))
+        if((i!=4 && i!=7 && i!=13 && i!=10 && i!=16) && !isdigit(input[i]))
         {
             return 1;
         }
