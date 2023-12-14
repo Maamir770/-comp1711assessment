@@ -132,9 +132,7 @@ int main()
     for (int i = 0; i < count; i++) {
         fprintf(file, "%s\t%s\t%d\n", fitness_data[i].date, fitness_data[i].time, fitness_data[i].steps);
     }
-
-    fclose(file);
-    printf("Data sorted and written to %s\n", filename);
+    printf("Data sorted and written to %s\n", output_filename);
 
     return 0;
     
