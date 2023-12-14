@@ -119,8 +119,10 @@ int main()
 
     sortBySteps(fitness_data, count);
 
-    strcat(filename, ".tsv");
-    file = fopen(filename, "w");
+    char output_filename[150];
+    strcpy(output_filename, filename);
+    strcat(output_filename, ".tsv");
+    file = fopen(output_filename, "w");
 
     if (file == NULL) {
         printf("Error opening file for writing\n");
