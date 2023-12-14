@@ -130,7 +130,7 @@ int main()
     }
 
     fclose(file);
-    printf("Sorted data has been written to %s\n", filename);
+    printf("Data sorted and written to %s\n", filename);
 
     return 0;
     
